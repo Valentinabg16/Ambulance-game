@@ -5,8 +5,16 @@
   <title>Ambulance Game</title>
   <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
   <style>
-    body { margin: 0; overflow: hidden; }
-    canvas { display: block; margin: auto; }
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    canvas {
+      display: block;
+      margin: auto;
+    }
+
     .touch-controls {
       position: absolute;
       bottom: 20px;
@@ -16,6 +24,7 @@
       gap: 20px;
       z-index: 100;
     }
+
     .btn {
       width: 60px;
       height: 60px;
@@ -27,7 +36,9 @@
       font-size: 24px;
       font-weight: bold;
       user-select: none;
-      touch-action: none;
+      touch-action: manipulation;  /* ✅ allows mobile touch gestures */
+      -webkit-tap-highlight-color: transparent;  /* ✅ removes blue highlight in iOS */
+      cursor: pointer;
     }
   </style>
 </head>
@@ -37,10 +48,12 @@
     <div class="btn" id="up">⬆️</div>
     <div class="btn" id="right">➡️</div>
   </div>
+
   <script src="js/menu.js"></script>
   <script src="js/howtoplay.js"></script>
   <script src="js/chapter1.js"></script>
   <script src="game.js"></script>
 </body>
 </html>
+
 
